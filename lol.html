@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link  rel="stylesheet" type="text/css" href="./lol.css"></link>
+
+    <!--<script type="module" src="./es_AR/championFull.json"></script> -->
+    <script type="module" src="./league.js"></script>
+
+    
+</head>
+<body>
+    <header>
+        <h1>Bienvenido al generador de un campeon de lol aleatorio</h1>
+    </header>
+    <div id="buttonDiv">
+        <button type="button" id="button">Obtener campeon</button>
+    </div>
+    <br>
+    <div id="champ" style="display: none;">
+        <h2>Campeon elegido:</h2>
+        <p id="champName"></p>
+        <img id="champPic" src="../img/champion/tiles/Aatrox_0.jpg">
+
+        <br>
+        <button id="reload" type="button" onClick="window.location.reload()">
+            Recarga la pagina
+         </button>
+    </div>
+
+    
+</body>
+</html>

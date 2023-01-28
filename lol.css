@@ -1,0 +1,45 @@
+body{
+    background-image: url('./src/images/istockphoto-1148888540-170667a.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+    padding: 0 5% 0 5%;
+    text-transform: uppercase;
+    color: white;
+    background: black;
+}
+
+div {
+    text-align: center;
+    padding: 0 20% 0 20%;
+    margin: 0 auto;
+}
+
+div #champ{
+    display: none;
+}
+
+button {
+    margin: 0 auto;
+    margin-top: 5%;
+    height: 30px;
+    size: 25%;
+    padding: 0 20% 0 20%;
+    border: 1px solid black;
+}
+
+
+div p{
+    text-align: center;
+}
+
+img{
+    height: 25%;
+    width: 25%;
+}
+
