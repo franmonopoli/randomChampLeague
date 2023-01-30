@@ -16,21 +16,27 @@
     <header>
         <h1>Bienvenido al generador de un campeon de lol aleatorio</h1>
     </header>
-    <div id="buttonDiv">
+    
+
+    <div id="buttonDiv" class="split left">
         <button type="button" id="button">Obtener campeon</button>
-    </div>
-    <br>
-    <div id="champ" style="display: none;">
-        <h2>Campeon elegido:</h2>
-        <p id="champName"></p>
-        <img id="champPic" src="../img/champion/tiles/Aatrox_0.jpg">
+        <div id="champ" class="centered" style="display: none;">
+            <br>
+            <h2>Campeon elegido:</h2>
+            <p id="champName"></p>
+            <img id="champPic" src="../img/champion/tiles/Aatrox_0.jpg">
 
-        <br>
-        <button id="reload" type="button" onClick="window.location.reload()">
-            Recarga la pagina
-         </button>
+        </br>
+            <button id="redirect" type="button">
+                    Runas del personaje (OP.GG)
+            </button>
+        </div>
     </div>
 
+
+    <div class="split right">
+        <button id="lines">Elegir lineas aleatorias</button>
+    </div>
     
 </body>
 </html>

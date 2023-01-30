@@ -7,39 +7,80 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/* HEADER*/
 header{
-    padding: 0 5% 0 5%;
+    width: 100%;
     text-transform: uppercase;
+    text-align: center;
     color: white;
     background: black;
 }
 
+/* DIVS */
 div {
+    position: fixed;
+    padding-top: 20px;
+    height: 100%;
+    width: 50%;
+    display: inline-block;
     text-align: center;
-    padding: 0 20% 0 20%;
     margin: 0 auto;
 }
 
-div #champ{
-    display: none;
+.split{
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top:20%;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
+/* Control the left side */
+.left {
+    left: 0;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+  }
+  
+  /* Control the right side */
+.right {
+    border-top: 1px solid black;
+    right: 0;
+  }
+
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+}
+
+#champ{
+    margin-top: 10%;
+}
+/* BUTTON */
 button {
     margin: 0 auto;
     margin-top: 5%;
     height: 30px;
     size: 25%;
-    padding: 0 20% 0 20%;
     border: 1px solid black;
 }
 
+#redirect{
+    padding: 0 5% 0 5%;
+}
 
+/* VARIOS */
 div p{
     text-align: center;
 }
 
 img{
-    height: 25%;
-    width: 25%;
+    height: 250px;
+    width: 250px;
 }
 
