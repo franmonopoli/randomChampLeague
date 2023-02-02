@@ -30,32 +30,53 @@ const lines = ['Top', 'Jungla', 'Mid', 'Adc', 'Soporte', 'Autofill']
 let getRandomLines = document.getElementById('selectLines')
 getRandomLines.addEventListener('click', e =>{
     let randomLines = getTwoRandomLines(lines)
-    let h2 = document.createElement('h2')
-    linesDiv.appendChild(document.createElement('br'))
-    h2.innerText = 'Lineas elegidas:'
-    linesDiv.appendChild(h2)
-    for(let line in randomLines){
-        let element = randomLines[line]
-        if(element != null){
-            let p = document.createElement('p')
-            p.innerHTML = element
 
-            let image = document.createElement('img')
-            let elementLC = element.toLowerCase()  
-            image.src = './img/lines_icon/'+elementLC+'Icon.png'
-            image.style.height = '100px';
-            image.style.width = '100px'
+    let firstLine = randomLines[0]
+    let secondLine = randomLines[1]
 
-            linesDiv.appendChild(p)
-            linesDiv.appendChild(image)
-        } 
-        
-        if(linesDiv){}
+    let divChildNodes = Object.values(linesDiv.children)
+
+
+    if(linesDiv.childNodes.length == 9){ 
+        replaceElement(firstLine, 'first')
+        replaceElement(secondLine, 'second')
     }
-    linesDiv.style.display = 'block'
+    
+    else{
+        displayLine(firstLine)
+        if(secondLine != null ){
+            displayLine(secondLine)
+       }
+}
 
-    linesDiv
-})
+
+    /*for(let line in randomLines){
+        let element = randomLines[line]
+        console.log(linesDiv.childNodes.length)
+        if(linesDiv.childNodes.length > 8){
+            console.log('Ya estan creados')
+            console.log(linesDiv.childNodes)
+        }
+        else{
+            if(element != null){
+                let p = document.createElement('p')
+                p.innerHTML = element
+    
+                let image = document.createElement('img')
+                let elementLC = element.toLowerCase()  
+                image.src = './img/lines_icon/'+elementLC+'Icon.png'
+                image.style.height = '100px';
+                image.style.width = '100px'
+    
+                linesDiv.appendChild(p)
+                linesDiv.appendChild(image)
+            } 
+        }
+       
+        */
+        if(linesDiv){}
+    })
+
 
 
 /* Funciones  */
@@ -102,4 +123,41 @@ function display(champName){
     document.getElementById('champName').innerHTML = champName
     image_id.src = image
     champDiv.style.display = 'block'
+}
+
+function createElement(element){
+    let p = document.createElement('p')
+    let img = document.createElement('img')
+
+    p.innerHTML = element
+
+    let elementLC = element.toLowerCase()
+    img.src = './img/lines_icon/'+elementLC+'Icon.png'
+    img.style.height = '100px';
+    img.style.width = '100px'
+
+    return [p,img]
+}
+
+
+function displayLine(element){
+    let data = createElement(element)
+    linesDiv.appendChild(data[0])
+    linesDiv.appendChild(data[1])
+
+    
+}
+
+function replaceElement(element, value){
+    let data = createElement(element)
+
+    if(value == 'first'){
+        linesDiv.replaceChild(data[0], linesDiv.childNodes[5])
+        linesDiv.replaceChild(data[1], linesDiv.childNodes[6])
+    }
+
+    else{
+        linesDiv.replaceChild(data[0], linesDiv.childNodes[7])
+        linesDiv.replaceChild(data[1], linesDiv.childNodes[8])
+    }
 }
