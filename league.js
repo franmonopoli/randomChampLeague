@@ -40,7 +40,6 @@ getRandomLines.addEventListener('click', e =>{
 
     let h2 = document.createElement('h2')
     h2.innerHTML = 'Lineas elegidas:'
-    let br = document.createElement('br')
 
     divAux.append(h2)
 
@@ -56,9 +55,9 @@ getRandomLines.addEventListener('click', e =>{
                 min-height: 0px;
             `
             let img = document.createElement('img')
-            let p = document.createElement('p')
+            let h2 = document.createElement('h2')
             
-            p.innerHTML = line
+            h2.innerHTML = line
 
            
             let lineLC = line.toLowerCase()  
@@ -66,7 +65,7 @@ getRandomLines.addEventListener('click', e =>{
             img.style.height = '100px';
             img.style.width = '100px'
 
-            div.appendChild(p)
+            div.appendChild(h2)
             div.appendChild(br)
             div.appendChild(img)
             

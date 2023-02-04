@@ -1,8 +1,6 @@
 body{
     margin: 0px; /*Para que el navegador no me lo haga por defecto, supongo que despues lo tengo que sacar*/
-    background-image: url('./src/images/istockphoto-1148888540-170667a.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-image: linear-gradient( #009081, #00aa99);
     background-size: 100%;
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -48,10 +46,17 @@ div {
 
 .left{
     border: 1px solid black;
-    border-right: 0px;
     text-align: center;
     flex-direction: column;
     left: 0;
+}
+
+div.separator{
+    color: white;
+}
+
+div.separator> *{
+    border: 2px solid black;
 }
 
 footer>div{
@@ -87,6 +92,10 @@ button {
 }
 
 /* VARIOS */
+
+.right>img{
+    border: 1px solid black;
+}
 img{
     height: 200px;
     width: 200px;
@@ -99,6 +108,11 @@ img{
 h1{
     margin: 0px;
     padding: 20px 0px 20px 0px;
+}
+
+h2{
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 p{
     margin-top: 10px;
