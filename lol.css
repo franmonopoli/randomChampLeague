@@ -51,6 +51,12 @@ div {
     left: 0;
 }
 
+div.contacto>a>img{
+    padding: 0px 20px 0px 20px;
+    height: 50px;
+    width: 50px;
+}
+
 /* BUTTON */
 button {
     transform: translateY(150px);
