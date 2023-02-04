@@ -10,14 +10,17 @@ body{
 
 /* HEADER*/
 header{
+    background-image: url('./src/images/desktop-wallpaper-full-black-solid-black-amoled.jpg');
     width: 100%;
     text-transform: uppercase;
     text-align: center;
     color: white;
-    background: black;
+
 }
 /* FOOTER*/
 footer {
+
+    color: white;
     font-size: 15px;
     bottom: 0;
     width: 100%;
@@ -51,6 +54,13 @@ div {
     left: 0;
 }
 
+footer>div{
+    background-image: url('./src/images/desktop-wallpaper-full-black-solid-black-amoled.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 div.contacto>a>img{
     padding: 0px 20px 0px 20px;
     height: 50px;
@@ -59,13 +69,17 @@ div.contacto>a>img{
 
 /* BUTTON */
 button {
-    transform: translateY(150px);
+    background-image: url('./src/images/desktop-wallpaper-full-black-solid-black-amoled.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+    transform: translateY(250px);
     margin: 0 auto;
     margin-top: 10px;
     width: 25%;
-    padding-top: 5px;
     height: 30px;
-    border: 1px solid black;
+    border: 1px solid lightblue;
 }
 
 #redirect{
@@ -82,7 +96,10 @@ img{
     height: 50px;
     width: 75px;
 }
-
+h1{
+    margin: 0px;
+    padding: 20px 0px 20px 0px;
+}
 p{
     margin-top: 10px;
 }
