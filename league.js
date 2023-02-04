@@ -31,7 +31,11 @@ getRandomLines.addEventListener('click', e =>{
     let randomLines = getTwoRandomLines(lines)
 
     let linesDiv = document.getElementById('linesSelector') // Solo se usa aca
+    let button = document.getElementById('selectLines')
+    button.style.transform = 'translateY(0px)'
+
     let divAux = document.createElement('div')
+    divAux.setAttribute('style',"flex-direction: column;")
     divAux.setAttribute('id', 'linesSelector') // Es para que se pise cuando lo use
 
     let h2 = document.createElement('h2')
@@ -39,13 +43,18 @@ getRandomLines.addEventListener('click', e =>{
     let br = document.createElement('br')
 
     divAux.append(h2)
-    divAux.append(br)
 
     randomLines.forEach( (line)=>{
         console.log(line)
         if(line){
 
+            let br = document.createElement('br')
             let div = document.createElement('div')
+            div.className = 'divsLines'
+            div.style.cssText = `
+                display: block;
+                min-height: 0px;
+            `
             let img = document.createElement('img')
             let p = document.createElement('p')
             
@@ -58,31 +67,19 @@ getRandomLines.addEventListener('click', e =>{
             img.style.width = '100px'
 
             div.appendChild(p)
+            div.appendChild(br)
             div.appendChild(img)
+            
         
             divAux.appendChild(div) // Asi tengo los dos dentro del div
         }
         
     })
         linesDiv.replaceWith(divAux)
+        linesDiv.display = 'block'
 
     })
-    /*
-    <div>
-        <h2></h2>
-        <br>
-        <div>
-            <p></p>
-            <img src="" alt="">
-        </div>
-        <div>
-            <p></p>
-            <img src="" alt="">
-        </div>
-    </div> */
-
-
-
+   
 
 
 /* Funciones  */
@@ -125,45 +122,10 @@ function redirect(champName){
 }
 
 function display(champName){
+    let button = document.getElementById('randomChamp')
+    button.style.transform = 'translateY(0px)'
     let image = '../img/champion/tiles/'+ champName +'_0.jpg' //Asi puedo cambiar la imagen del champion
     document.getElementById('champName').innerHTML = champName
     image_id.src = image
     champDiv.style.display = 'block'
-}
-
-function createElement(element){
-    let p = document.createElement('p')
-    let img = document.createElement('img')
-
-    p.innerHTML = element
-
-    let elementLC = element.toLowerCase()
-    img.src = './img/lines_icon/'+elementLC+'Icon.png'
-    img.style.height = '100px';
-    img.style.width = '100px'
-
-    return [p,img]
-}
-
-
-function displayLine(element){
-    let data = createElement(element)
-    linesDiv.appendChild(data[0])
-    linesDiv.appendChild(data[1])
-
-    
-}
-
-function replaceElement(element, value){
-    let data = createElement(element)
-
-    if(value == 'first'){
-        linesDiv.replaceChild(data[0], linesDiv.childNodes[5])
-        linesDiv.replaceChild(data[1], linesDiv.childNodes[6])
-    }
-
-    else{
-        linesDiv.replaceChild(data[0], linesDiv.childNodes[7])
-        linesDiv.replaceChild(data[1], linesDiv.childNodes[8])
-    }
 }
