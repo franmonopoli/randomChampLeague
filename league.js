@@ -1,6 +1,5 @@
 'use strict'
 let champDiv = document.getElementById('champ')
-let linesDiv = document.getElementById('linesSelector')
 
 let image_id = document.getElementById('champPic')
 let p_champ = document.getElementById('champName')
@@ -31,51 +30,58 @@ let getRandomLines = document.getElementById('selectLines')
 getRandomLines.addEventListener('click', e =>{
     let randomLines = getTwoRandomLines(lines)
 
-    let firstLine = randomLines[0]
-    let secondLine = randomLines[1]
+    let linesDiv = document.getElementById('linesSelector') // Solo se usa aca
+    let divAux = document.createElement('div')
+    divAux.setAttribute('id', 'linesSelector') // Es para que se pise cuando lo use
 
-    let divChildNodes = Object.values(linesDiv.children)
+    let h2 = document.createElement('h2')
+    h2.innerHTML = 'Lineas elegidas:'
+    let br = document.createElement('br')
 
+    divAux.append(h2)
+    divAux.append(br)
 
-    if(linesDiv.childNodes.length == 9){ 
-        replaceElement(firstLine, 'first')
-        replaceElement(secondLine, 'second')
-    }
-    
-    else{
-        displayLine(firstLine)
-        if(secondLine != null ){
-            displayLine(secondLine)
-       }
-}
+    randomLines.forEach( (line)=>{
+        console.log(line)
+        if(line){
 
+            let div = document.createElement('div')
+            let img = document.createElement('img')
+            let p = document.createElement('p')
+            
+            p.innerHTML = line
 
-    /*for(let line in randomLines){
-        let element = randomLines[line]
-        console.log(linesDiv.childNodes.length)
-        if(linesDiv.childNodes.length > 8){
-            console.log('Ya estan creados')
-            console.log(linesDiv.childNodes)
+           
+            let lineLC = line.toLowerCase()  
+            img.src = './img/lines_icon/'+lineLC+'Icon.png'
+            img.style.height = '100px';
+            img.style.width = '100px'
+
+            div.appendChild(p)
+            div.appendChild(img)
+        
+            divAux.appendChild(div) // Asi tengo los dos dentro del div
         }
-        else{
-            if(element != null){
-                let p = document.createElement('p')
-                p.innerHTML = element
-    
-                let image = document.createElement('img')
-                let elementLC = element.toLowerCase()  
-                image.src = './img/lines_icon/'+elementLC+'Icon.png'
-                image.style.height = '100px';
-                image.style.width = '100px'
-    
-                linesDiv.appendChild(p)
-                linesDiv.appendChild(image)
-            } 
-        }
-       
-        */
-        if(linesDiv){}
+        
     })
+        linesDiv.replaceWith(divAux)
+
+    })
+    /*
+    <div>
+        <h2></h2>
+        <br>
+        <div>
+            <p></p>
+            <img src="" alt="">
+        </div>
+        <div>
+            <p></p>
+            <img src="" alt="">
+        </div>
+    </div> */
+
+
 
 
 
@@ -97,7 +103,7 @@ function getRandomInt(min, max) {
 }
 
 function getTwoRandomLines(array_lines){
-    let auxArray = array_lines
+    let auxArray = [...array_lines] // Forma de copiar y no usar el mismo array
     let randomNumber = getRandomInt(0, auxArray.length -1)
     let firstLine = auxArray[randomNumber]
     
