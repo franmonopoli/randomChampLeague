@@ -1,66 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link  rel="stylesheet" type="text/css" href="./lol.css"></link>
+		<link rel="stylesheet" type="text/css" href="./lol.css" />
+		<link rel="stylesheet" type="text/css" href="./grid.css" />
 
-    <!--<script type="module" src="./es_AR/championFull.json"></script> -->
-    <script type="module" src="./league.js"></script>
+		<!--<script type="module" src="./es_AR/championFull.json"></script> -->
+		<script type="module" src="./league.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>BIENVENIDO AL GENERADOR DE UN CAMPEON DE LOL ALEATORIO</h1>
+		</header>
 
-    
-</head>
-<body>
-    <header>
-        <h1>Bienvenido al generador de un campeon de lol aleatorio</h1>
-    </header>
-    
+		<div class="container d-flex flex-row vh-75">
+			<div
+				class="row w-50 d-flex flex-column align-items-center justify-content-center"
+			>
+				<div class="buttons mt-1">
+					<button id="randomChamp">Obtener campeon</button>
+				</div>
+				<div
+					class="card w-50 d-flex flex-column align-items-center"
+					id="randomChampContainer"
+					style="display: none"
+				>
+					<div class="title">Campeon Elegido:</div>
+					<div class="body" id="champ">
+						<div id="champName"></div>
+						<img id="champImg" />
+					</div>
+					<div class="footer">
+						<div class="title">Obtener runas en OP.GG</div>
+						<div class="buttons d-flex justify-content-center">
+							<a href="" id="redirectOpgg" target="_blank">
+								<img src="./src/images/opgg.png" id="opgg" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="row w-50 d-flex flex-column align-items-center justify-content-center"
+			>
+				<div class="buttons mt-1">
+					<button id="selectLines">Elegir lineas aleatorias</button>
+				</div>
+				<div
+					class="card w-50 d-flex flex-column align-items-center"
+					id="randomLinesContainer"
+					style="display: none"
+				>
+					<div class="title">Lineas Elegidas:</div>
+					<div class="body">
+						<div id="lines">
+							<div id="line">
+								<div class="title"></div>
+								<img src="" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div
+				class="w-100 d-flex flex-column align-items-center justify-content-center text-align-center"
+			>
+				<div class="w-95">
+					<p>
+						Nada de lo que se muestra en esta pagina es de mi
+						pertenencia. La informacion de los campeones e imagenes
+						pertenecen por completo a RIOT Games ®. La parte de
+						Runas pertenecen por completo a OP.GG, en caso de tener
+						algun tipo de problema con esta pagina, comunicarse al
+						mail franciscomonopoli1@gmail.com
+					</p>
+				</div>
 
-    <div class="separator">
-
-        <div id="buttonDiv" class="left">
-            <button id="randomChamp">Obtener campeon</button>
-            <div id="champ"  style="display: none;">
-                <h2>Campeon elegido:</h2>
-                <h2 id="champName"></h2>
-                <img id="champPic">
-
-            <br>
-            <h3>Obtener runas en OP.GG</h3>
-            <br>
-            <a href="" id="redirectOpgg" target="_blank""><img src="./src/images/opgg.png" id="opgg"></a>
-        
-            </div>
-        </div>
-
-
-        <div class="right">
-            <button id="selectLines">Elegir lineas aleatorias</button>
-            <div id="linesSelector" style="flex-direction: column;" >
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <div style="min-height: 0px;">
-        <p>Nada de lo que se muestra en esta pagina es de mi pertenencia. La informacion de los campeones e imagenes
-             pertenecen por completo a RIOT Games ®. La parte de Runas pertenecen por completo a OP.GG, en caso de tener
-            algun tipo de problema con esta pagina, comunicarse al mail franciscomonopoli1@gmail.com</p>
-        </div>
-        
-            <div id="data" style="min-height: 0px;">
-                <p>Pagina creada por Francisco Monopoli. Copyright 2023 - All Rights Reserved 
-                    Contacto:</p>
-                <div class="contacto" id="contacto" style="min-height: 0px;">
-                    <a href="https://github.com/franmonopoli" id="redirectGithub" target="_blank""><img src="./src/images/contacto/github.png" id="github"></a>
-                    <a href="https://www.linkedin.com/in/francisco-monopoli-656134196/" id="redirectLinkedin" target="_blank""><img src="./src/images/contacto/linkedin.png" id="linkedin"></a>
-                    <a href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcSMTDxFTVZkKKKKLdfqGrwqVTlcMvFSXQPVMvPhSlGhLkbxrZNHnNVRWFBCrxbNbPtFBlSnD" id="redirectGmail" target="_blank""><img src="./src/images/contacto/gmail.png" id="gmail"></a>
-                </div>
-            </div>
-    </footer>
-</body>
+				<div id="data">
+					<p>
+						Pagina creada por Francisco Monopoli. Copyright 2023 -
+						All Rights Reserved Contacto:
+					</p>
+					<div class="contacto" id="contacto">
+						<a
+							href="https://github.com/franmonopoli"
+							id="redirectGithub"
+							target="_blank"
+						>
+							<img
+								src="./src/images/contacto/github.png"
+								id="github"
+							/>
+						</a>
+						<a
+							href="https://www.linkedin.com/in/francisco-monopoli-656134196/"
+							id="redirectLinkedin"
+							target="_blank"
+						>
+							<img
+								src="./src/images/contacto/linkedin.png"
+								id="linkedin"
+							/>
+						</a>
+						<a
+							href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcSMTDxFTVZkKKKKLdfqGrwqVTlcMvFSXQPVMvPhSlGhLkbxrZNHnNVRWFBCrxbNbPtFBlSnD"
+							id="redirectGmail"
+							target="_blank"
+						>
+							<img
+								src="./src/images/contacto/gmail.png"
+								id="gmail"
+							/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>
-

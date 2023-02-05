@@ -1,123 +1,133 @@
-body{
-    margin: 0px; /*Para que el navegador no me lo haga por defecto, supongo que despues lo tengo que sacar*/
-    background-image: linear-gradient( #009081, #00aa99);
-    background-size: 100%;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+body {
+	margin: 0px; /*Para que el navegador no me lo haga por defecto, supongo que despues lo tengo que sacar*/
+	background-color: #00aa99;
+	font-size: 20px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	min-height: 100vh;
 }
 
 /* HEADER*/
-header{
-    background-image: url('./src/images/desktop-wallpaper-full-black-solid-black-amoled.jpg');
-    width: 100%;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-
+header {
+	background-color: #000;
+	width: 100%;
+	text-align: center;
+	color: white;
 }
+
 /* FOOTER*/
 footer {
-
-    color: white;
-    font-size: 15px;
-    bottom: 0;
-    width: 100%;
-    height: 60px;   /* Height of the footer */
- }
+	color: white;
+	font-size: 15px;
+	width: 100%;
+}
 
 /* DIVS */
-div {
-    min-height: 500px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 5px;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
 
+.line {
+	margin-bottom: 1rem;
 }
 
-.right{
-    border: 1px solid black;
-    text-align: center;
-    flex-direction: column;
-    right: 0%;
+footer > div {
+	background-image: url('./src/images/desktop-wallpaper-full-black-solid-black-amoled.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
-.left{
-    border: 1px solid black;
-    text-align: center;
-    flex-direction: column;
-    left: 0;
-}
-
-div.separator{
-    color: white;
-}
-
-div.separator> *{
-    border: 2px solid black;
-}
-
-footer>div{
-    background-image: url('./src/images/desktop-wallpaper-full-black-solid-black-amoled.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-div.contacto>a>img{
-    padding: 0px 20px 0px 20px;
-    height: 50px;
-    width: 50px;
+.contacto > a > img {
+	padding: 0px 20px 0px 20px;
+	height: 50px;
+	width: 50px;
 }
 
 /* BUTTON */
 button {
-    background-image: url('./src/images/desktop-wallpaper-full-black-solid-black-amoled.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    color: white;
-    transform: translateY(250px);
-    margin: 0 auto;
-    margin-top: 10px;
-    width: 25%;
-    height: 30px;
-    border: 1px solid lightblue;
+	background-color: #000;
+	color: white;
+	height: 30px;
+	border: 1px solid lightblue;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
-#redirect{
-    padding: 0 5% 0 5%;
+#redirect {
+	padding: 0 5% 0 5%;
 }
 
 /* VARIOS */
 
-.right>img{
-    border: 1px solid black;
+.right > img {
+	border: 1px solid black;
 }
-img{
-    height: 200px;
-    width: 200px;
-}
-
-#opgg{
-    height: 50px;
-    width: 75px;
-}
-h1{
-    margin: 0px;
-    padding: 20px 0px 20px 0px;
+img {
+	height: 200px;
+	width: 200px;
 }
 
-h2{
-    margin-top: 15px;
-    margin-bottom: 5px;
+#opgg {
+	height: 50px;
+	width: 75px;
 }
-p{
-    margin-top: 10px;
+h1 {
+	margin: 0px;
+	padding: 20px 0px 20px 0px;
 }
 
-h3{
-    margin-bottom: 5px;
+h2 {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+p {
+	margin-top: 10px;
+}
+
+h3 {
+	margin-bottom: 5px;
+}
+
+/* Css Max */
+
+.container {
+	min-height: 35.7rem;
+	background-color: #000;
+	grid-gap: 0.5rem;
+}
+
+.row {
+	background-color: #00aa99;
+}
+
+.containerInfo {
+	width: 50%;
+}
+
+.card {
+	padding: 2rem 0rem;
+}
+
+.card .title,
+.card .footer {
+	padding: 1rem 0rem;
+}
+
+.card .title {
+	margin-bottom: 1rem;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #fff;
+}
+
+.card .footer .title {
+	font-size: 1.17em;
+	font-weight: bold;
+	color: #fff;
+}
+
+#champName,
+.lineName {
+	text-align: center;
+	margin-bottom: 1rem;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #fff;
 }
